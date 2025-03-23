@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - npm install -g @angular/cli
+      - npm install
+  build:
+    commands:
+      - ng build --configuration=production
+  post_build:
+    commands:
+      - aws s3 sync dist/my-angular-spa s3://my-angular-spa-bucket --delete
