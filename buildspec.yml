@@ -11,4 +11,4 @@ phases:
       - ng build --configuration=production
   post_build:
     commands:
-      - aws s3 sync dist/home-angular-app/browser s3://jfppf-angular-spa-bucket --delete
+      - aws s3 sync dist/home-angular-app/browser s3://jfppf-home-angular-spa-bucket --delete
